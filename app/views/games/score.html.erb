@@ -1,5 +1,7 @@
-<h1 class= "h1">Results</h1>
+<h1 class= "h1 text-center bg-warning py-3">Results</h1>
 <br>
 <br>
-<p class= "h3">Score: <%= @hash[:score] %> </p>
-<p class= "h3"> <%= @hash[:message] %> </p>
+<p class= "h3 text-center ">Score: <%= @hash[:score] %> </p>
+<p class= "h3 text-center "> <%= @hash[:message] %> </p>
+
+<p class= "text-center h3"><%= link_to "Play Again!", new_path %></p>

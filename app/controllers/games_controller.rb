@@ -14,11 +14,11 @@ class GamesController < ApplicationController
     # TODO: runs the game and return detailed hash of result (with `:score`, `:message` and `:time` keys)
     # get_word_from_api(attempt)
     if !get_word_from_api(guess)
-      @hash = { score: 0, message: "not an english word" }
+      @hash = { score: 0, message: "Sorry but #{guess} is not an english word", guess: guess }
     elsif !validate_attempt(guess.upcase, grid)
-      @hash = { score: 0, message: "not in the grid" }
+      @hash = { score: 0, message: "Sorry but #{guess} is not in the grid", guess: guess }
     else
-      @hash = { score: 1 * guess.size, message: "well done" }
+      @hash = { score: 1 * guess.size, message: "Congratulations! #{guess} is in the grid!", guess: guess }
     end
     return @hash
   end
